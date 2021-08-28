@@ -25,7 +25,7 @@ a.tag--success,
 
 a.tag--primary,
 .tag--primary {
-    @include tag-color-variant(map-get($colors, primary));
+    @include tag-2-color-variant(map-get($colors, primary),map-get($colors, primary-hover));
 }
 
 a.tag--danger,

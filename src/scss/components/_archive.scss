@@ -12,7 +12,7 @@
     }
     .archive-posts {
         list-style: none;
-
+        color: map-get($colors, cn-bright-teal);
         .archive-post {
             .archive-post-title {
                 margin-left: 10px;

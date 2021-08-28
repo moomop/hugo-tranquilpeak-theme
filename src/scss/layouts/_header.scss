@@ -6,6 +6,7 @@
     position:                    fixed;
     top:                         0;
     border:                      map-get($header, border);
+    border-width:                0 0 1px 0;
     color:                       map-get($header, color);
     // used to animate the header on small screen with javascript
     //@include prefix(transition, top 0.25s ease-in-out, 'webkit' 'moz' 'ms' 'o');
@@ -37,7 +38,7 @@
             display:       block;
             width:         30px;
             height:        30px;
-            border-radius: 15px;
+            border-radius: 0px;
         }
     }
     .header-right-icon {

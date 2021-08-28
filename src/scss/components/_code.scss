@@ -55,7 +55,7 @@ figure.highlight,
         font-size:      map-get($highlight, font-size);
 
         pre {
-            color: #aaaaaa;
+            color: map-get($colors, 'code-gutter');
         }
     }
     // Code container

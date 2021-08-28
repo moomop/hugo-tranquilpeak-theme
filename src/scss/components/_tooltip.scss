@@ -63,7 +63,7 @@
     }
     &:after {
         // Center tooltip with his arrow
-        margin-left: -#{math.div(map-get($tooltip, min-width), 2) + 1};
+        margin-left: -#{map-get($tooltip, min-width)/2) + 1};
     }
     &:before,
     &:after {

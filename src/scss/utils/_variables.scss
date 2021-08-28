@@ -6,30 +6,34 @@ $open-sans:            'Open Sans';
 $open-sans-sans-serif: 'Open Sans', sans-serif;
 $merriweather-serif:   'Merriweather', serif;
 $menlo:                 Menlo, Consolas, monospace;
+$arvo:                 'Arvo', serif;
+$lato:                 'Lato', sans-serif;
 
-$font-family-base: $open-sans-sans-serif;
+
+$font-family-base: $lato;
 
 $font-families: (
    // base
-   'headings':          $open-sans-sans-serif,
+   'headings':          $arvo,
    // components
    'code':              $menlo,
-   'caption':           $merriweather-serif,
+   'caption':           $lato,
    'image-gallery':     $open-sans,
-   'post-header-cover': $merriweather-serif,
-   'post-meta':         $open-sans-sans-serif,
-   'post-content':      $merriweather-serif,
-   'post-excerpt-link': $open-sans-sans-serif,
+   'post-header-cover': $lato,
+   'post-meta':         $lato,
+   'post-content':      $lato,
+   'post-excerpt-link': $lato,
    'highlight':         $menlo,
    // layout
-   'sidebar':           $open-sans-sans-serif
+   'sidebar':           $lato
 );
 
 // equal to 15px
 $font-size-base:      1.6rem;
-$font-color-base:     #5d686f;
+$font-color-base:     #4e4e4e;
 $line-height-base:    1.9em;
-$letter-spacing-base: 0.01em;
+$letter-spacing-base: normal;
+
 
 // Reduction of font size base on small screen and down
 $font-size-base-sm-screen-reduction-factor: 0.1rem;
@@ -47,15 +51,24 @@ $font-size: (
 
 // Colors
 $colors: (
-    'success': #4dc657,
+    'success': blue,
     'danger':  #f5311d,
-    'primary': #349ef3,
+    'primary': #e28e6e,
+    'primary-hover': #72afa9,
     'purple':  #cf6ae0,
     'base':    $font-color-base,
     'warning':  #f5aa0a,
-    'light':   #9eabb3,
+    'light':   #afafaf,
      // use for tag `a`
-    'link':    #349ef3
+    'link':    #e28e6e,
+    'site-background': #3b464c,
+    'headings'       : #3b464c,
+    'mid-grey'       : #767676,
+    'pale'           : #fcf9f5,
+    'cn-bright-teal' : #72afa9,
+    'cn-button-vpale': #afafaf,
+    'code-gutter'    : #aaaaaa,
+
 );
 
 // Z-indexes
@@ -118,7 +131,6 @@ $xlarge-and-up:   "only screen and (min-width : #{map-get($screen, xlg-min)})" !
 $headings-font-size: (
     'h1': 2.8rem,
     'h2': 2.4rem,
-    'h3': 2.0rem,
     'h4': 1.8rem,
     'h5': 1.7rem,
     'h6': 1.6rem
@@ -141,8 +153,8 @@ $about: (
 $header:(
     'height':     55px,
     'background': #fff,
-    'color':      #88909a,
-    'border':     1px solid #eef2f8
+    'color':      map-get($colors, 'mid-grey'),
+    'border':     solid map-get($colors, 'light')
 );
 
 // Sidebar
@@ -151,7 +163,7 @@ $sidebar: (
     'lg-screen-width':  250px,
     'xlg-screen-width': 500px,
     'background':       rgba(17, 26, 35, 0),
-    'color':            #ebebeb
+    'color':            map-get($colors, 'pale')
 );
 
 // Main

@@ -15,6 +15,7 @@ body {
     margin:         0;
     padding:        0;
     background:     white;
+    color:          map-get($colors, 'base');
     font-family:    $font-family-base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
@@ -34,11 +35,10 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: -0.04em;
     font-family:    map-get($font-families, 'headings');
-    font-weight:    700;
+    font-weight:    600;
     line-height:    1.45em;
-    color:          #4a4a4a;
+    color:          map-get($colors, 'headings');
 }
 
 h1,
@@ -51,6 +51,10 @@ h4,
 h5,
 h6 {
     margin: 1em 0 0.5em 0;
+}
+
+p + h6, p + h5, p + h4, p + h3, p + h2, p + h1 {
+   margin: 2em 0 0.5em 0;
 }
 
 // List each header with his font size
@@ -95,14 +99,14 @@ table {
     th {
         padding:       5px 10px;
         font-weight:   bold;
-        border-bottom: 2px solid #909ba2;
+        border-bottom: 2px solid map-get($colors, 'light');
     }
     td {
         padding: 5px 10px;
     }
     tr {
         &:nth-child(2n) {
-            background: #f7f8f8;
+            background: map-get($colors, 'pale');
         }
     }
 }
@@ -111,7 +115,7 @@ hr {
     margin:     1.5em 0 0;
     outline:    none;
     border:     none;
-    border-top: 1px solid #eef2f8;
+    border-top: 1px solid map-get($colors, 'cn-button-vpale');
 }
 
 dl {
@@ -149,22 +153,7 @@ code {
     padding:          0 10px;
 }
 
-blockquote {
-    border-left: 3px solid map-get($colors, 'base');
-    padding:     0 15px;
-    font-style:  italic;
-    margin:      1.5em 0 0;
 
-    cite {
-        &:before {
-            content: ' — ';
-            padding: 0 0.3em;
-        }
-    }
-    & > p:first-child {
-        margin: 0;
-    }
-}
 
 // Reduce global font-size base and headings font size on small screen and down
 @media #{$small-and-down} {

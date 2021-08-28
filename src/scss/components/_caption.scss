@@ -2,9 +2,21 @@
     display:       block;
     font-family:   map-get($font-families, 'caption');
     font-size:     map-get($font-size, small);
-    color:         darken(map-get($colors, 'light'), 10%);
+    color:         map-get($colors, 'mid-grey');
     text-align:    center;
     font-style:    italic;
     padding-right: 10px;
     padding-left:  10px;
+}
+
+figcaption {
+    p {
+    display:       block;
+    font-family:   map-get($font-families, 'caption');
+    font-size:     map-get($font-size, small);
+    color:         map-get($colors, 'mid-grey');
+    text-align:    center;
+    font-style:    italic;
+    padding-right: 10px;
+    }
 }

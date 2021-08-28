@@ -31,8 +31,7 @@
                 width:      100%;
 
                 .sidebar-button-icon {
-                    font-size:      2rem;
-                    font-weight:    600;
+                    font-size:      1.7rem;
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -66,13 +65,14 @@
         .sidebar-profile-picture {
             width:         90px;
             height:        90px;
-            border-radius: 90px;
+            border-radius:  0px;
             margin-bottom: 5px;
         }
         .sidebar-profile-name {
             font-size: 1.6rem;
         }
     }
+
     // Buttons
     ul.sidebar-buttons {
         li.sidebar-button {
@@ -86,8 +86,7 @@
 
                 // Font-awesome icon
                 .sidebar-button-icon {
-                    font-size:      2rem;
-                    font-weight:    600;
+                    font-size:      1.7rem;
                     display:        inline-block;
                     text-align:     center;
                     width:          30px;
@@ -104,7 +103,7 @@
                     height:         35px;
                     line-height:    35px;
                     font-size:      1.5rem;
-                    letter-spacing: 0.3px;
+                    letter-spacing: normal;
                     vertical-align: middle;
                 }
             }
@@ -139,7 +138,7 @@
         .sidebar-profile-picture {
             width:         90px;
             height:        90px;
-            border-radius: 90px;
+            border-radius:  0px;
             margin-bottom: 5px;
         }
         .sidebar-profile-bio,
@@ -172,8 +171,7 @@
                 white-space: nowrap;
                 // Font-awesome icon
                 .sidebar-button-icon {
-                    font-size:      2rem;
-                    font-weight:    600;
+                    font-size:      1.7rem;
                     float:          left;
                     text-align:     center;
                     width:          30px;
@@ -190,7 +188,7 @@
                     height:         35px;
                     line-height:    35px;
                     font-size:      1.5rem;
-                    letter-spacing: 0.3px;
+                    letter-spacing: normal;
                     vertical-align: middle;
                     overflow:       hidden;
                     white-space:    nowrap;

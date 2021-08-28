@@ -4,7 +4,7 @@
     .postShorten {
         // Space between 2 shorten post
         margin-top:    15px;
-        border-bottom: 1px solid #eef2f8;
+        border-bottom: 1px solid map-get($colors, 'cn-button-vpale');
     }
 }
 
@@ -14,6 +14,7 @@
     width:          100%;
     display:        inline-block;
     vertical-align: top;
+    padding-bottom: 15px;
 
     .postShorten-thumbnailimg {
         overflow:hidden;
@@ -55,7 +56,7 @@
     .postShorten-excerpt,
     .postShorten-content {
         text-rendering: optimizelegibility;
-        letter-spacing: -0.3px;
+        letter-spacing: normal;
         font-family:    map-get($font-families, 'post-content');
         color:          map-get($colors, base);
         font-weight:    400;
@@ -103,7 +104,7 @@
                 display:    block;
                 width:      $post-thumbnail-image-width;
                 height:     $post-thumbnail-image-width;
-                object-fit: cover;
+                object-fit: contain;
                 overflow:   hidden;
             }
         }
@@ -121,7 +122,7 @@
                 display:    block;
                 width:      $post-thumbnail-image-width;
                 height:     $post-thumbnail-image-width;
-                object-fit: cover;
+                object-fit: contain;
                 overflow:   hidden;
             }
         }
@@ -130,9 +131,29 @@
             width: calc(100% - #{$post-thumbnail-image-width} - 20px);
         }
     }
+    .postShorten.postShorten--thumbnailimg-right {
+        .postShorten-thumbnailimg.postShorten-thumbnailimg-crop {
+            img {
+               object-fit: cover;
+            }
+        }
+    }
+   .postShorten.postShorten--thumbnailimg-left {
+        .postShorten-thumbnailimg.postShorten-thumbnailimg-crop {
+            img {
+               object-fit: cover;
+            }
+        }
+    }
     .postShorten.postShorten--thumbnailimg-top {
         .postShorten-thumbnailimg {
-            margin-top: 5px;
+            display: block;
+            margin:   5px 0 0 0;
+            overflow: hidden;
+            img {
+                width:  100%;
+                height: auto;
+            }
         }
     }
     .postShorten.postShorten--thumbnailimg-bottom {
@@ -148,7 +169,7 @@
             display:  block;
             width:    100%;
             overflow: hidden;
-            margin:   15px 0 15px 0;
+            margin:   15px 0 0 0;
 
             img {
                 width:      100%;

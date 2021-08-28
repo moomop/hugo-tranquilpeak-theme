@@ -11,6 +11,18 @@
     }
 }
 
+@mixin tag-2-color-variant($color1, $color2) {
+    color:  $color1 !important;
+    border: 1px solid $color1;
+
+    &:hover {
+        color:           $color2 !important;
+        border:          1px solid darken($color2, 15);
+        text-decoration: none;
+    }
+}
+
+
 /// Helper for 'components/tag' to stylize a tag with a specified size and padding
 /// @param {String} $font-size - Font-size CSS value
 /// @param {List} $padding - List of padding CSS value

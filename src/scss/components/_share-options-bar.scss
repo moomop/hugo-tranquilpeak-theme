@@ -7,7 +7,7 @@
     height:             100%;
     clear:              both;
     box-sizing:         border-box;
-    border-top:         1px solid #eef2f8;
+    border-top:         1px solid map-get($colors, 'cn-button-vpale');
     transition:         transform .25s ease-in-out;
     z-index:            map-get($z-indexes, 'c-share-options-bar');
     -webkit-transition: -webkit-transform .25s ease-in-out;
@@ -42,7 +42,7 @@
                 }
             }
             .share-option-btn {
-                color:   #6e7681;
+                color:   map-get($colors, 'mid-grey');
                 display: block;
                 width:   100%;
                 padding: 10px 0 10px 0;

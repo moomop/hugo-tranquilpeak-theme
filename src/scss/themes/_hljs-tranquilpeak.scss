@@ -29,14 +29,14 @@ figure.highlight,
 
     figcaption {
         background: map-get($highlight, 'background');
-        color:      #999999;
+        color:      map-get($colors, 'light');
     }
     .gutter {
         background:         map-get($highlight, 'background');
-        border-right-color: #e6e6e6;
+        border-right-color: map-get($colors, 'light');;
 
         .line {
-            color: #aaaaaa;
+            color: map-get($colors, 'code-gutter');
         }
     }
 
