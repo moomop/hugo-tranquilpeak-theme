@@ -13,6 +13,7 @@
           </form>
           {{ partial "archive-post.html" (where .Site.RegularPages "Type" "in" site.Params.mainSections) }}
         </div>
+        {{ partial "footer.html" . }}
       </div>
     </div>
 {{ partial "foot.html" . }}

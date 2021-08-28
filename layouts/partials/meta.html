@@ -58,18 +58,19 @@
   {{ end }}
 {{ end }}
 
-{{ if .Scratch.Get "gravatarEmail" }}
-  <meta property="og:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
-{{ else if .Site.Author.picture }}
-  <meta property="og:image" content="{{ .Site.Author.picture | absURL }}">
-  <meta property="twitter:image" content="{{ .Site.Author.picture | absURL }}">
+{{ with .Params.thumbnailImage }}
+  <meta property="og:image" content="{{ print $.Permalink  . }}">
+  <meta property="twitter:image" content="{{ print $.Permalink  . }}">
+{{ end }}
+{{ with .Params.coverImage }}
+  <meta property="og:image" content="{{ print $.Permalink  . }}">
+  <meta property="twitter:image" content="{{ print $.Permalink  . }}">
 {{ end }}
 
 {{ with .Params.gallery }}
   {{ range . }}
-    <meta property="og:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
-    <meta property="twitter:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
+    <meta property="og:image" content="{{ range first 1 (split . " ") }}{{ print $.Permalink  . }}{{ end }}">
+    <meta property="twitter:image" content="{{ range first 1 (split . " ") }}{{ print $.Permalink  . }}{{ end }}">
   {{ end }}
 {{ end }}
 {{ with .Params.coverImage }}

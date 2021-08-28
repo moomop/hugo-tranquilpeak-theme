@@ -6,7 +6,7 @@
       {{ $cover := (printf "images/%s" .) }}
       <div id="cover" style="background-image:url('{{ $cover | absURL }}');"></div>
     {{ else }}
-      <div id="cover" style="background-image:url('{{ . | absURL }}');"></div>
+      <div id="cover"></div>
     {{ end }}
   {{ end }}
 {{ end }}

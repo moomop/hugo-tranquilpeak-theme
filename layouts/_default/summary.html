@@ -1,17 +1,17 @@
 {{ if .Site.Params.thumbnailImage }}
   {{ if .Params.thumbnailimage }}
-    {{ .Scratch.Set "thumbnailImage" (.Params.thumbnailimage | absURL) }}
+    {{ .Scratch.Set "thumbnailImage" (.Params.thumbnailimage) }}
   {{ else }}
     {{ if or .Params.autothumbnailimage (and .Site.Params.autoThumbnailImage (ne .Params.autothumbnailimage false)) }}
       {{ if .Params.gallery }}
         {{ range first 1 .Params.gallery }}
           {{ range first 1 (split . " ") }}
-            {{ $.Scratch.Set "thumbnailImage" (. | absURL) }}
+            {{ $.Scratch.Set "thumbnailImage" (.) }}
           {{ end }}
         {{ end }}
       {{ else }}
         {{ if .Params.coverimage }}
-          {{ .Scratch.Set "thumbnailImage" (.Params.coverimage | absURL) }}
+          {{ .Scratch.Set "thumbnailImage" (.Params.coverimage ) }}
         {{ end }}
       {{ end }}
     {{ end }}
@@ -22,7 +22,16 @@
 {{ else }}
   {{ .Scratch.Set "thumbnailImagePosition" "bottom" }}
 {{ end }}
-<article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}">
+
+{{if .Scratch.Get "thumbnailImage"}}
+{{with .Resources.GetMatch  (.Scratch.Get "thumbnailImage") }}
+  {{ $.Scratch.Set "thumbnailImage" .Permalink }}
+{{ else }}
+  {{ $.Scratch.Set "thumbnailImage" ((.Scratch.Get "thumbnailImage")| absURL) }}
+{{ end }}
+{{ end }}
+
+<article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}" itemscope itemType="http://schema.org/BlogPosting">
   <div class="postShorten-wrap">
     {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
       {{ with .Params.link }}
@@ -69,7 +78,11 @@
   </div>
   {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
     <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
+      {{ if .Params.thumbnailCrop }}
+      <div class="postShorten-thumbnailimg postShorten-thumbnailimg-crop">
+      {{ else }}
       <div class="postShorten-thumbnailimg">
+      {{ end }}
         <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
       </div>
     </a>
