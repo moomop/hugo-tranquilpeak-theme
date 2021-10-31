@@ -103,8 +103,21 @@
     }
 
 .cn_fig-33 {
+        width: 66%;
+    }
+
+.cn_fig-50 {
         width: 75%;
     }
+
+.cn_fig-75 {
+        width: 95%;
+    }
+
+}
+
+
+
 
 @media #{$large-only} {
     #main {
@@ -128,6 +141,8 @@
         }
     }
 }
+
+
 
 @media #{$xlarge-and-up} {
     #main {
@@ -158,13 +173,4 @@
     }
 }
 
-.cn_fig-50 {
-        width: 75%;
-    }
-
-.cn_fig-75 {
-        width: 100%;
-    }
-
-}
 

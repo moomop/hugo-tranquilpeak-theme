@@ -38,7 +38,7 @@ h4,
 h5,
 h6 {
     font-family:    map-get($font-families, 'headings');
-    font-weight:    600;
+    font-weight:    700;
     line-height:    1.45em;
     color:          map-get($colors, 'headings');
 }
@@ -53,10 +53,6 @@ h4,
 h5,
 h6 {
     margin: 1em 0 0.5em 0;
-}
-
-p + h6, p + h5, p + h4, p + h3, p + h2, p + h1 {
-   margin: 2em 0 0.5em 0;
 }
 
 // List each header with his font size
@@ -114,7 +110,7 @@ table {
 }
 
 hr {
-    margin:     1.5em 0 0;
+    margin:     1.5em 0 1.5em 0;
     outline:    none;
     border:     none;
     border-top: 1px solid map-get($colors, 'cn-button-vpale');
