@@ -32,6 +32,13 @@
 {{ end }}
 
 <article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}" itemscope itemType="http://schema.org/BlogPosting">
+  {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
+  <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
+    <div class="postShorten-thumbnailimg">
+      <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+    </div>
+  </a>
+{{ end }}
   <div class="postShorten-wrap">
     {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
       {{ with .Params.link }}
@@ -76,15 +83,5 @@
       </p>
     </div>
   </div>
-  {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
-    <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
-      {{ if .Params.thumbnailCrop }}
-      <div class="postShorten-thumbnailimg postShorten-thumbnailimg-crop">
-      {{ else }}
-      <div class="postShorten-thumbnailimg">
-      {{ end }}
-        <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
-      </div>
-    </a>
-  {{ end }}
+
 </article>

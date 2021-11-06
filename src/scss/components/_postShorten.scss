@@ -81,17 +81,95 @@
 }
 
 // Hide the post's thumbnail image on very small screen and down
+// @media #{$xsmall-and-down} {
+//    .postShorten {
+//        .postShorten-thumbnailimg {
+//            display: none;
+//
+//            img {
+//                display: none;
+//            }
+//        }
+//   }
+//}
+
 @media #{$xsmall-and-down} {
-    .postShorten {
+    .postShorten.postShorten--thumbnailimg-right {
         .postShorten-thumbnailimg {
-            display: none;
+            display: block;
+            margin:   0;
+            overflow: hidden;
+            
+            img {
+                display:    block;
+                width:      $post-thumbnail-image-width;
+                height:     auto;
+                object-fit: contain;
+                overflow:   hidden;
+                margin: 5px auto 15px auto;
+            }
+        }
+        .postShorten-wrap {
+                width: 100%;
+        }
+    }
+
+    .postShorten.postShorten--thumbnailimg-left {
+        .postShorten-thumbnailimg {
+            display: block;
+            margin:   0;
+            overflow: hidden;
+            
+            img {
+                display:    block;
+                width:      $post-thumbnail-image-width;
+                height:     auto;
+                object-fit: contain;
+                overflow:   hidden;
+                margin: 5px auto 15px auto;
+            }
+        }
+        .postShorten-wrap {
+                width: 100%;
+        }
+    }
+
+    .postShorten.postShorten--thumbnailimg-top {
+        .postShorten-thumbnailimg {
+            display: block;
+            margin:   5px 0 0 0;
+            overflow: hidden;
+            img {
+                width:  100%;
+                height: auto;
+            }
+        }
+    }
+    .postShorten.postShorten--thumbnailimg-bottom {
+        .postShorten-wrap {
+            display: block;
+            width:   100%;
+        }
+        .postShorten-excerpt > p {
+            margin-bottom: 0;
+        }
+        .postShorten-thumbnailimg {
+
+            display:  block;
+            width:    100%;
+            overflow: hidden;
+            margin:   15px 0 0 0;
 
             img {
-                display: none;
+                width:      100%;
+                height:     auto;
+                max-height: $post-bottom-thumbnail-image-max-height;
+                object-fit: cover;
             }
         }
     }
 }
+
 
 // Display the post's thumbnail image on small screen and up
 @media #{$small-and-up} {
@@ -103,7 +181,7 @@
             img {
                 display:    block;
                 width:      $post-thumbnail-image-width;
-                height:     $post-thumbnail-image-width;
+                height:     auto;
                 object-fit: contain;
                 overflow:   hidden;
             }
@@ -121,7 +199,7 @@
             img {
                 display:    block;
                 width:      $post-thumbnail-image-width;
-                height:     $post-thumbnail-image-width;
+                height:     auto;
                 object-fit: contain;
                 overflow:   hidden;
             }
@@ -129,20 +207,6 @@
         .postShorten-wrap {
             float: right;
             width: calc(100% - #{$post-thumbnail-image-width} - 20px);
-        }
-    }
-    .postShorten.postShorten--thumbnailimg-right {
-        .postShorten-thumbnailimg.postShorten-thumbnailimg-crop {
-            img {
-               object-fit: cover;
-            }
-        }
-    }
-   .postShorten.postShorten--thumbnailimg-left {
-        .postShorten-thumbnailimg.postShorten-thumbnailimg-crop {
-            img {
-               object-fit: cover;
-            }
         }
     }
     .postShorten.postShorten--thumbnailimg-top {
