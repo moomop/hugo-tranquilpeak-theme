@@ -1,0 +1,9 @@
+{{ with .Params.authors }}
+  {{ $authorsLen := len . }}
+  {{ if gt $authorsLen 0 }}
+    <span>by</span>
+    {{ range $k, $v := . }}
+      <a class="category-link" href="{{ . | printf "%s%s" "/authors/" | urlize | lower | relLangURL }}">{{ . }}</a>{{ if lt $k (sub $authorsLen 1) }}, {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
